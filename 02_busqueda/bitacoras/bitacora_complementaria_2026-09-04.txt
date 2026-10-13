@@ -1,0 +1,16 @@
+BITACORA DE BUSQUEDA COMPLEMENTARIA
+Fecha de ejecucion: 2026-09-04
+Ventana: 2022-2026
+Fuentes: Crossref REST API, Semantic Scholar Graph API
+Consultas ejecutadas: 6
+Tipos aceptados: book-chapter, journal-article, proceedings-article
+Registros en bruto: 419
+Duplicados eliminados: 41
+Unicos para cribado: 378
+
+  1. retrieval augmented generation university administrative information
+  2. retrieval augmented generation higher education student services chatbot
+  3. retrieval augmented generation university regulations policy question answering
+  4. retrieval augmented generation campus virtual assistant admission
+  5. retrieval augmented generation academic institution procedures conversational agent
+  6. grounded generation higher education institutional information chatbot

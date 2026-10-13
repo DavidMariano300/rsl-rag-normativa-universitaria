@@ -1,0 +1,23 @@
+﻿ANALISIS DE COBERTURA POR CAPTURA-RECAPTURA
+conjunto de control,"revision v1 de agosto 2026, via OpenAlex"
+estudios en el control,126
+elegibles bajo v2 (plataforma indizada y 2022-2026),37
+recuperados por la busqueda automatizada v2,23
+NO recuperados,14
+tasa de recuperacion estimada,62%
+
+anio,plataforma,calidad_v1,titulo,doi,aplicacion_v1
+2023,MDPI,3.0,Introducing a Chatbot to the Web Portal of a Higher Education Institution to Enhance Student Interaction,https://doi.org/10.3390/asec2023-16621,admissions_recruitment; academic_advising; general_campus_info; student_records_procedures
+2024,IEEE Xplore,2.5,Chatbots in Academia: A Retrieval-Augmented Generation Approach for Improved Efficient Information Access,https://doi.org/10.1109/kst61284.2024.10499652,admissions_recruitment
+2024,IEEE Xplore,3.5,From Questions to Insightful Answers: Building an Informed Chatbot for University Resources,https://doi.org/10.1109/fie61694.2024.10892994,general_campus_info
+2024,ACM Digital Library,3.0,JayBot -- Aiding University Students and Admission with an LLM-based Chatbot,https://doi.org/10.1145/3627508.3638293,admissions_recruitment; general_campus_info; student_records_procedures
+2025,MDPI,3.0,A Comparative Performance Analysis of Locally Deployed Large Language Models Through a Retrieval-Augmented Generation Educational Assistant Application for Textual Data Extraction,https://doi.org/10.3390/ai6060119,regulations_policy
+2025,IEEE Xplore,3.0,A Comparative Study of Vietnamese Embedding Models for LLM-Based Automated Question Answering on DUT Regulations,https://doi.org/10.1109/atigb66719.2025.11142122,regulations_policy
+2025,IEEE Xplore,3.0,A Generative Bangla Question Answering System Using Large Language Model for University Admission Related Frequently Asked Questions,https://doi.org/10.1109/iccit68739.2025.11490197,admissions_recruitment
+2025,IEEE Xplore,3.5,A Unified Framework for AR Indoor Navigation and Conversational Information Retrieval in Smart Campus Environments,https://doi.org/10.1109/icicis66182.2025.11313163,academic_advising
+2025,IEEE Xplore,3.5,Hybrid LLM Architecture for Semantic Querying of University Regulatory Documents,https://doi.org/10.1109/cinti67731.2025.11311747,regulations_policy
+2025,IEEE Xplore,4.0,LLM-Based Chatbot for the Indonesia University IT Service Desk: Integrating DeepSeek-v3 API and a RAG Approach,https://doi.org/10.1109/icodsa67155.2025.11157184,academic_advising; helpdesk_it_support
+2026,IEEE Xplore,4.5,Campus AI RAG: A Multi-LLM Retrieval-Augmented Generation System for College Information Support,https://doi.org/10.1109/ickecs70176.2026.11527960,
+2026,SpringerLink,2.0,Knowledge-augmented form-filling agent for higher education services,https://doi.org/10.1186/s41239-026-00612-x,admissions_recruitment
+2026,IEEE Xplore,3.5,Metadata-Driven RAG Architecture for Context-Aware University Information Retrieval,https://doi.org/10.1109/scse70081.2026.11499763,general_campus_info
+2026,IEEE Xplore,2.0,Viot: A Smart Student Assistant System Using RAG and LLM-Based Query Processing,https://doi.org/10.1109/ickecs70176.2026.11527633,student_records_procedures

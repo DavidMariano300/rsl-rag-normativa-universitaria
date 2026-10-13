@@ -1,0 +1,18 @@
+APLICACION POSTERIOR DE LA CONSULTA BOOLEANA SOBRE CROSSREF
+Fecha: 2026-09-04
+Archivo de entrada: complementarias_2026-09-04.csv
+
+Motivo: la API de Crossref no admite operadores booleanos. La consulta del
+protocolo se aplica de forma posterior y determinista sobre titulo y resumen.
+
+Registros en bruto: 378
+Cumplen los cuatro bloques: 9
+Descartados por el filtro: 369
+
+Bloques exigidos (deben aparecer los cuatro):
+  A tecnologia:   retrieval[\s\-]?augmented\s+generation | \bRAG\b | grounded\s+generation | retrieval[\s\-]?grounded
+  B conversacion: chatbot | conversational\s+(agent|assistant|ai|system) | virtual\s+assistant | question[\s\-]answering | dialogue\s+system | asistente\s+conversacional | agente\s+conversacional
+  C universidad:  universit(y|ies|ario|aria) | higher\s+education | \bcampus\b | academic\s+institution | educaci[oó]n\s+superior | \bstudent(s)?\b | estudiante
+  D institucion:  regulat(ion|ory|ions) | normativ | \bpolic(y|ies)\b | bylaw | statute | administrativ | enrol | admission | registrar | student\s+services | procedure | tr[aá]mite | reglament
+
+El conjunto en bruto y el de descartados se conservan para auditoria.

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Si usa estos materiales, cite la revisión de la siguiente manera."
+title: "Sistemas conversacionales anclados en recuperación para el acceso a información normativa y procedimental en instituciones de educación superior: una revisión sistemática. Materiales de auditoría y reproducción"
+authors:
+  - family-names: "Mariano Ruiz"
+    given-names: "Edgar David"
+    orcid: "https://orcid.org/0009-0005-6171-1206"
+    affiliation: "Facultad de Ingeniería, Universidad Autónoma de Guerrero"
+  - family-names: "Catalán Villegas"
+    given-names: "Arnulfo"
+    affiliation: "Facultad de Ingeniería, Universidad Autónoma de Guerrero"
+  - family-names: "Hernández De La Cruz"
+    given-names: "Mercedes"
+    affiliation: "Facultad de Ingeniería, Universidad Autónoma de Guerrero"
+date-released: "2026-10-13"
+version: "4.0"
+license: CC-BY-4.0
+repository-code: "https://github.com/DavidMariano300/rsl-rag-normativa-universitaria"

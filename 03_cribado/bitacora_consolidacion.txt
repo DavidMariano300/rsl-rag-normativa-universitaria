@@ -1,0 +1,13 @@
+CONSOLIDACION PARA CRIBADO - protocolo v2, apartado 5.1
+Umbral de coincidencia difusa de titulo: 0.93
+
+  56  busqueda automatizada, verificado en plataforma indizada
+  34  ERIC y DBLP
+   2  snowballing hacia adelante y hacia atras
+  92  total en bruto
+   2  duplicados eliminados
+  90  unicos para cribado
+
+PENDIENTE: exportaciones manuales de Scopus, WoS, IEEE Xplore, ACM y
+SpringerLink, bloqueadas por credenciales institucionales. Las cifras
+de este conjunto son PROVISIONALES hasta incorporarlas.
