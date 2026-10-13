@@ -1,5 +1,5 @@
 % Manuscrito v4. Compilar con: xelatex -> biber -> xelatex -> xelatex
-\documentclass[man,12pt,floatsintext]{apa7}
+\documentclass[man,12pt,floatsintext,donotrepeattitle]{apa7}
 \usepackage[spanish,es-noquoting,es-tabla,es-nolists]{babel}
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Termes}
@@ -26,6 +26,11 @@
 \hypersetup{hidelinks}
 \urlstyle{same}
 \def\acksname{Nota del autor}
+% Flujo continuo: sin estirar el espacio vertical, sin líneas viudas ni huérfanas
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+\captionsetup{skip=6pt}
 
 \title{Sistemas Conversacionales Anclados en Recuperación para el Acceso a Información Normativa y Procedimental en Instituciones de Educación Superior: Una Revisión Sistemática}
 \shorttitle{RAG para información normativa universitaria}
@@ -38,15 +43,18 @@ Correspondencia: Edgar David Mariano Ruiz, Facultad de Ingeniería, Universidad 
 Los autores declaran no tener conflictos de intereses.
 
 El protocolo congelado, las cadenas de búsqueda, la matriz de extracción y el formulario de calidad están disponibles en \url{https://github.com/DavidMariano300/rsl-rag-normativa-universitaria}.}
-\abstract{Las universidades acumulan un acervo normativo extenso y difícil de consultar. Esta revisión sistemática valoró la evidencia empírica sobre sistemas conversacionales anclados en recuperación aplicados a ese acervo, con atención a la fidelidad de las respuestas y al tiempo de consulta. Se siguieron PRISMA 2020 y las guías de Kitchenham y Charters. De 2\,179 registros recuperados en cuatro fuentes, la indización editorial de cada candidato se verificó por el prefijo de su identificador digital de objeto; 90 estudios pasaron a cribado, 30 a texto completo y 28 a extracción, y 24 superaron el umbral de calidad de 4.0 sobre 7.0. La estrategia de segmentación del documento se declara en 20 de los 24 estudios y solo dos la prueban experimentalmente; en ellos, los fragmentos de 512 unidades léxicas superan a los de 4\,000 y resumir el fragmento degrada la recuperación y la respuesta. Las métricas de clasificación dominan la evaluación (12 de 24) y la fidelidad, cuando se mide aparte, es la puntuación más baja. Ocho estudios reportan latencia y ninguno la compara contra la consulta tradicional. La respuesta cita su fuente en 9 estudios y solo 4 publican datos o código. Ningún estudio trabaja con un corpus en español ni proviene de América Latina. El anclaje documental reduce la invención de datos; falta demostrar que reduce el tiempo de acceso a la norma. La segmentación del documento normativo en español y la medición del tiempo con un diseño de dos brazos son las líneas de mayor retorno.
-\par\indent\textit{Palabras clave:} generación anclada en recuperación, información normativa universitaria, evaluación de fidelidad, segmentación semántica, trazabilidad documental, revisión sistemática
-\newpage
-\begin{center}\textbf{Abstract}\end{center}
-\noindent Universities hold an extensive body of institutional regulation that governs the daily decisions of students, applicants and staff, and that is hard to consult. This systematic review appraised the empirical evidence on retrieval-augmented conversational systems applied to that body of regulation, focusing on how answer faithfulness was evaluated and on consultation time. PRISMA 2020 and the Kitchenham and Charters guidelines were followed. From 2,179 records retrieved from four sources, the publisher indexing of every candidate was verified through its digital object identifier prefix; 90 studies entered screening, 30 were assessed in full text, 28 were extracted, and 24 passed a quality threshold of 4.0 out of 7.0. Document segmentation strategy was reported in 20 of the 24 studies and only two tested it experimentally; in those, 512-token chunks outperformed 4,000-token chunks and summarizing the chunk degraded both retrieval and answers. Classification metrics dominated evaluation (12 of 24), and faithfulness, when measured separately, was the lowest score reported. Eight studies reported latency and none compared it against traditional consultation. Answers cited their source in 9 studies and only 4 released data or code. No study used a Spanish-language corpus or came from Latin America. Document grounding reduces fabricated content; whether it reduces the time needed to reach a regulation remains to be shown. Segmentation of Spanish-language regulatory documents and the measurement of consultation time with a two-arm design are the lines with the greatest return.
-\par\indent\textit{Keywords:} retrieval-augmented generation, university regulation, faithfulness evaluation, semantic chunking, document traceability, systematic review}
 
 \begin{document}
 \maketitle
+\section*{Resumen}
+\noindent Las universidades acumulan un acervo normativo extenso y difícil de consultar. Esta revisión sistemática valoró la evidencia empírica sobre sistemas conversacionales anclados en recuperación aplicados a ese acervo, con atención a la fidelidad de las respuestas y al tiempo de consulta. Se siguieron PRISMA 2020 y las guías de Kitchenham y Charters. De 2\,179 registros recuperados en cuatro fuentes, la indización editorial de cada candidato se verificó por el prefijo de su identificador digital de objeto; 90 estudios pasaron a cribado, 30 a texto completo y 28 a extracción, y 24 superaron el umbral de calidad de 4.0 sobre 7.0. La estrategia de segmentación del documento se declara en 20 de los 24 estudios y solo dos la prueban experimentalmente; en ellos, los fragmentos de 512 unidades léxicas superan a los de 4\,000 y resumir el fragmento degrada la recuperación y la respuesta. Las métricas de clasificación dominan la evaluación (12 de 24) y la fidelidad, cuando se mide aparte, es la puntuación más baja. Ocho estudios reportan latencia y ninguno la compara contra la consulta tradicional. La respuesta cita su fuente en 9 estudios y solo 4 publican datos o código. Ningún estudio trabaja con un corpus en español ni proviene de América Latina. El anclaje documental reduce la invención de datos; falta demostrar que reduce el tiempo de acceso a la norma. La segmentación del documento normativo en español y la medición del tiempo con un diseño de dos brazos son las líneas de mayor retorno.
+\par\indent\textit{Palabras clave:} generación anclada en recuperación, información normativa universitaria, evaluación de fidelidad, segmentación semántica, trazabilidad documental, revisión sistemática
+
+\section*{Abstract}
+\noindent Universities hold an extensive body of institutional regulation that governs the daily decisions of students, applicants and staff, and that is hard to consult. This systematic review appraised the empirical evidence on retrieval-augmented conversational systems applied to that body of regulation, focusing on how answer faithfulness was evaluated and on consultation time. PRISMA 2020 and the Kitchenham and Charters guidelines were followed. From 2,179 records retrieved from four sources, the publisher indexing of every candidate was verified through its digital object identifier prefix; 90 studies entered screening, 30 were assessed in full text, 28 were extracted, and 24 passed a quality threshold of 4.0 out of 7.0. Document segmentation strategy was reported in 20 of the 24 studies and only two tested it experimentally; in those, 512-token chunks outperformed 4,000-token chunks and summarizing the chunk degraded both retrieval and answers. Classification metrics dominated evaluation (12 of 24), and faithfulness, when measured separately, was the lowest score reported. Eight studies reported latency and none compared it against traditional consultation. Answers cited their source in 9 studies and only 4 released data or code. No study used a Spanish-language corpus or came from Latin America. Document grounding reduces fabricated content; whether it reduces the time needed to reach a regulation remains to be shown. Segmentation of Spanish-language regulatory documents and the measurement of consultation time with a two-arm design are the lines with the greatest return.
+\par\indent\textit{Keywords:} retrieval-augmented generation, university regulation, faithfulness evaluation, semantic chunking, document traceability, systematic review
+
+\section*{\normalfont\textbf{Sistemas Conversacionales Anclados en Recuperación para el Acceso a Información Normativa y Procedimental en Instituciones de Educación Superior: Una Revisión Sistemática}}
 \section{Introducción}
 Una universidad pública mexicana de tamaño medio administra decenas de documentos normativos vigentes, desde la ley orgánica y el estatuto hasta los reglamentos de titulación, los lineamientos de becas y las convocatorias anuales, y ese acervo cambia por partes y a destiempo. Quien necesita saber cuántas veces puede recursar una asignatura no enfrenta falta de información. Enfrenta un problema de localización: la respuesta es pública, pero vive en un artículo concreto de un documento concreto, y la ventanilla que podría orientarlo tiene horario y depende del personal en turno.
 
@@ -80,30 +88,44 @@ El prefijo prueba quién publicó el trabajo y en qué plataforma editorial est�
 \subsection{Cadenas de Búsqueda}
 La cadena base combina tres bloques por conjunción, cada uno con sus sinónimos unidos por disyunción, y se aplicó sobre título, resumen y palabras clave. El bloque de tecnología cubre \texttt{\textquotedbl{}retrieval augmented generation\textquotedbl{} OR \textquotedbl{}retrieval-augmented generation\textquotedbl{} OR RAG OR \textquotedbl{}grounded generation\textquotedbl{} OR \textquotedbl{}retrieval grounded\textquotedbl{}}. El de sistema conversacional cubre \texttt{chatbot OR \textquotedbl{}conversational agent\textquotedbl{} OR \textquotedbl{}conversational assistant\textquotedbl{} OR \textquotedbl{}virtual assistant\textquotedbl{} OR \textquotedbl{}question answering\textquotedbl{} OR \textquotedbl{}dialogue system\textquotedbl{}}. El de contexto institucional combina \texttt{university OR \textquotedbl{}higher education\textquotedbl{} OR campus OR \textquotedbl{}academic institution\textquotedbl{}} con \texttt{regulation* OR normative OR policy OR bylaw* OR statute OR administrative OR enrollment OR admission OR registrar OR \textquotedbl{}student services\textquotedbl{} OR procedure*}.
 
-Para no perder estudios con vocabulario distinto, la búsqueda se ejecutó en seis variantes de la cadena, relajando un bloque a la vez; en Crossref, que no admite operadores booleanos, la cadena se aplicó sobre título y resumen después de la descarga. Se complementó con rastreo de citas hacia atrás y hacia adelante sobre los estudios incluidos \parencite{wohlin2014}.
+Para no perder estudios con vocabulario distinto, la búsqueda se amplió a seis variantes de la cadena, relajando un bloque a la vez. Sobre los registros de Crossref la cadena se aplicó después de la descarga, de forma determinista, sobre título y resumen. Se complementó con rastreo de citas hacia atrás y hacia adelante sobre los estudios incluidos \parencite{wohlin2014}.
 
 \subsection{Criterios de Elegibilidad}
 Un estudio se incluyó si cumplía los ocho criterios de inclusión y ninguno de los de exclusión (Tabla 1).
 
-\begin{table}[htbp]
-\caption{Criterios de Elegibilidad}
-\label{tab:1}
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.480\linewidth}>{\raggedright\arraybackslash}p{0.480\linewidth}@{}}
+{\def\baselinestretch{1}\small\selectfont
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.085\linewidth}>{\raggedright\arraybackslash}p{0.273\linewidth}>{\raggedright\arraybackslash}p{0.583\linewidth}@{}}
+\caption{Criterios de Elegibilidad}\label{tab:1}\\
 \toprule
-Criterios de inclusión & Criterios de exclusión \\ \midrule
-I1. Estudio primario que desarrolla, implementa o evalúa un sistema con generación anclada en documentos recuperados & E1. El objeto es contenido instruccional, tutoría o apoyo al aprendizaje \\
-I2. Aplicado en una institución de educación superior & E2. El sistema no recupera sobre un corpus propio \\
-I3. Información normativa, administrativa o procedimental de la institución & E3. Estudio secundario: revisión, mapeo o metaanálisis \\
-I4. Evaluación empírica con al menos una métrica cuantitativa o un instrumento sistemático & E4. Literatura gris \\
-I5. Publicado entre 2022 y 2026 & E5. Dominio distinto al universitario \\
-I6. Revisión por pares en revista o en congreso con comité científico & E6. Sin evaluación empírica, o solo describe una arquitectura propuesta \\
-I7. Texto completo accesible en inglés o en español & E7. Versión duplicada o preliminar de un trabajo incluido \\
-I8. Alojado en una plataforma editorial con indización reconocida & E8. Editorial sin plataforma de indización reconocida \\
+Código & Criterio & Definición \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{Tabla 1 (continuación)}}\\
+\toprule
+Código & Criterio & Definición \\
+\midrule
+\endhead
+I1 & Estudio primario con RAG & Desarrolla, implementa o evalúa un sistema cuya generación está anclada en documentos recuperados \\
+I2 & Educación superior & El sistema se aplica en una institución de educación superior \\
+I3 & Información institucional & La información objetivo es normativa, administrativa o procedimental de la institución \\
+I4 & Evaluación empírica & Reporta al menos una métrica cuantitativa o un instrumento sistemático de valoración \\
+I5 & Periodo & Publicado entre 2022 y 2026 \\
+I6 & Revisión por pares & Publicado en revista o en congreso con comité científico \\
+I7 & Idioma y acceso & Texto completo accesible en inglés o en español \\
+I8 & Indización editorial & Alojado en una plataforma editorial con indización reconocida \\
+E1 & Contenido instruccional & El objeto es tutoría, contenido de curso o apoyo al aprendizaje \\
+E2 & Sin corpus propio & El sistema no recupera sobre un corpus institucional \\
+E3 & Estudio secundario & Revisión, mapeo sistemático o metaanálisis \\
+E4 & Literatura gris & Preimpresión, tesis, reporte técnico o documentación de producto \\
+E5 & Otro dominio & Dominio clínico, industrial, jurisdiccional o corporativo \\
+E6 & Sin evaluación & No presenta evaluación empírica o solo describe una arquitectura \\
+E7 & Duplicado & Versión duplicada o preliminar de un trabajo ya incluido \\
+E8 & Editorial no indizada & Publicado por una editorial sin plataforma de indización reconocida \\
 \bottomrule
-\end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} La indización editorial de los criterios I8 y E8 se comprobó por el prefijo del identificador digital de objeto.}
-\end{table}
+\end{longtable}}
+\vspace{-1.2em}
+{\footnotesize\noindent\textit{Nota.} La indización editorial de los criterios I8 y E8 se comprobó por el prefijo del identificador digital de objeto.\par}
+\vspace{1em}
 
 \subsection{Evaluación de la Calidad}
 Cada estudio incluido se puntuó con un instrumento de siete criterios adaptado de \textcite{kitchenham2007} y de \textcite{dyba2008}. Un criterio vale 1 punto si se cumple, 0.5 si se cumple de forma parcial y 0 si no se cumple. Los criterios valoran si el estudio declara con claridad sus objetivos (QA1), si describe el corpus de manera que su preparación sea replicable (QA2), si especifica la arquitectura con detalle suficiente para reproducirla (QA3), si reporta evaluación empírica con métricas definidas y procedimiento descrito (QA4), si incluye una línea base o configuración alternativa (QA5), si discute limitaciones y amenazas a la validez (QA6) y si pone a disposición datos, código o conjunto de evaluación (QA7).
@@ -130,7 +152,7 @@ La búsqueda en bases recuperó 2\,179 registros: 1\,676 de OpenAlex con las sei
 
 El cribado excluyó 60 estudios. E1 fue el motivo dominante, con 33 estudios que trataban contenido instruccional o tutoría en lugar de información institucional; siguieron I3 con 9 casos, E5 con 5, y E3, E4 y E6 con 3 cada uno.
 
-De los 30 estudios evaluados a texto completo salieron dos.\footnote{Las referencias de los dos estudios excluidos a texto completo se encuentran en el Apéndice B.} \textcite{garcialopez2026} habían superado el cribado por su resumen, pero el texto completo mostró un artefacto conceptual de ciencia del diseño sin evaluación empírica, cuyas puntuaciones de fiabilidad los propios autores declaran hipotéticas (criterio E6). El capítulo de \textcite{vumanh2026} no pudo obtenerse a texto completo; comparte autoría con \textcite{nguyenl2025}, que sí se incluyó. Se extrajeron 28 estudios y, al aplicar el umbral de calidad, cuatro quedaron por debajo de 4.0. La síntesis se construye sobre 24.
+De los 30 estudios evaluados a texto completo salieron dos.\footnote{Las referencias completas de los estudios excluidos se listan en el Apéndice A y B.} \textcite{garcialopez2026} habían superado el cribado por su resumen, pero el texto completo mostró un artefacto conceptual de ciencia del diseño sin evaluación empírica, cuyas puntuaciones de fiabilidad los propios autores declaran hipotéticas (criterio E6). El capítulo de \textcite{vumanh2026} no pudo obtenerse a texto completo; comparte autoría con \textcite{nguyenl2025}, que sí se incluyó. Se extrajeron 28 estudios y, al aplicar el umbral de calidad, cuatro quedaron por debajo de 4.0. La síntesis se construye sobre 24.
 
 La cobertura de la búsqueda se estimó con un análisis de captura y recaptura contra el conjunto de una exploración previa con criterios amplios. De 37 estudios de ese conjunto que cumplen los criterios de plataforma y fecha de esta revisión, la búsqueda recuperó 23, lo que estima una recuperación de 62~\%. Los 14 no recuperados, casi todos ponencias de IEEE de 2025 y 2026, quedan documentados en el repositorio del proyecto para su cribado en la actualización de la revisión. El rastreo de citas, por su parte, aportó solo 2 estudios nuevos de 692 registros examinados.
 
@@ -150,7 +172,7 @@ Idioma del corpus & Inglés: 11 (uno bilingüe con coreano); vietnamita: 4; chin
 Despliegue del generador & Local: 12; servicio externo: 7; comparación de ambos: 1; no declarado: 4 \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} La editorial se determinó por el prefijo del identificador digital de objeto. El idioma bilingüe se cuenta en la categoría de inglés.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} La editorial se determinó por el prefijo del identificador digital de objeto. El idioma bilingüe se cuenta en la categoría de inglés.\par}
 \end{table}
 
 Dieciocho de los 24 estudios son de 2025 o posteriores, y ninguno es anterior a 2024 aunque la ventana se abrió en 2022. El campo tiene menos de tres años, lo que explica a la vez su energía y su inmadurez metodológica.
@@ -177,7 +199,7 @@ Puntuación & n & Estudios \\ \midrule
 4.0 & 4 & \textcite{comia2025}; \textcite{khan2025}; \textcite{rachmat2024}; \textcite{wu2025} \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} Puntuación máxima de 7.0. El umbral de inclusión en la síntesis fue 4.0.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} Puntuación máxima de 7.0. El umbral de inclusión en la síntesis fue 4.0.\par}
 \end{table}
 
 La media es 5.38 y la mediana 5.5. La distribución por criterio muestra un patrón muy marcado (Tabla 4).
@@ -198,12 +220,12 @@ QA2. Corpus replicable & 14 & 10 & 0 & 0.79 \\
 QA7. Datos o código disponibles & 4 & 3 & 17 & 0.23 \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. La media se calcula con 1 para cumple, 0.5 para parcial y 0 para no cumple.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. La media se calcula con 1 para cumple, 0.5 para parcial y 0 para no cumple.\par}
 \end{table}
 
 Seis criterios promedian 0.79 o más. El séptimo promedia 0.23. La disponibilidad de datos o código es el criterio que el campo incumple casi por completo, y la distancia respecto de los demás no se explica por falta de espacio: publicar un repositorio no consume páginas.
 
-Los cuatro estudios que quedaron fuera por el umbral se listan en la Tabla 5, porque uno de ellos aporta un hallazgo que se recupera en la discusión.\footnote{Las referencias completas de los cuatro estudios excluidos por el umbral de calidad se encuentran en el Apéndice A.}
+Los cuatro estudios que quedaron fuera por el umbral se listan en la Tabla 5, porque uno de ellos aporta un hallazgo que se recupera en la discusión.\footnote{Las referencias completas de los estudios excluidos se listan en el Apéndice A y B.}
 
 \begin{table}[htbp]
 \caption{Estudios por Debajo del Umbral de Calidad, Excluidos de la Síntesis}
@@ -218,7 +240,7 @@ Estudio & Total & Motivo determinante \\ \midrule
 \textcite{thanushree2026} & 1.0 & No mide nada: su única tabla de resultados compara características frente a un proceso manual idealizado, y la mejora de más de 40~\% que anuncia el resumen no se deriva en el texto. \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} Puntuación máxima de 7.0. La justificación de cada criterio está disponible en el repositorio del proyecto.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} Puntuación máxima de 7.0. La justificación de cada criterio está disponible en el repositorio del proyecto.\par}
 \end{table}
 
 El último caso muestra por qué un umbral de calidad tiene que aplicarse y no quedarse en el protocolo. Con criterios amplios, un estudio que anuncia una mejora porcentual en su resumen sin medirla en el cuerpo habría entrado a la síntesis, y su cifra se habría propagado como evidencia.
@@ -227,13 +249,18 @@ El último caso muestra por qué un umbral de calidad tiene que aplicarse y no q
 \subsubsection{Segmentación del Documento}
 Veinte de los 24 estudios declaran una estrategia de segmentación y cuatro no la reportan o prescinden de ella por diseño (Tabla 6). Predominan los fragmentos de tamaño fijo, de 500 a 1\,200 unidades léxicas o caracteres; les siguen el corte por unidad estructural del documento, la fragmentación semántica y, en un caso, la fragmentación manual por intención de consulta. Diecisiete estudios justifican su elección de forma sustantiva, dos con un argumento meramente operativo y cinco no la justifican.
 
-\begin{table}[htbp]
-\caption{Estrategias de Segmentación del Documento en los Estudios de la Síntesis}
-\label{tab:6}
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.310\linewidth}>{\raggedleft\arraybackslash}p{0.080\linewidth}>{\raggedright\arraybackslash}p{0.550\linewidth}@{}}
+{\def\baselinestretch{1}\small\selectfont
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.310\linewidth}>{\raggedleft\arraybackslash}p{0.080\linewidth}>{\raggedright\arraybackslash}p{0.550\linewidth}@{}}
+\caption{Estrategias de Segmentación del Documento en los Estudios de la Síntesis}\label{tab:6}\\
 \toprule
-Estrategia & n & Estudios \\ \midrule
+Estrategia & n & Estudios \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{Tabla 6 (continuación)}}\\
+\toprule
+Estrategia & n & Estudios \\
+\midrule
+\endhead
 Tamaño fijo, de 500 a 1\,200 unidades, con o sin solapamiento & 8 & \textcite{artayasa2025}; \textcite{jayakody2026}; \textcite{nguyenthidieu2024}; \textcite{ramli2025}; \textcite{shaikh2025}; \textcite{stepanov2026}; \textcite{tamascelli2025}; \textcite{wu2025} \\
 Tamaño fijo comparado como variable: 512 contra 4\,000 unidades & 1 & \textcite{wojtasik2025} \\
 División recursiva contra semántica, comparadas como variable & 1 & \textcite{khasanova2025} \\
@@ -243,31 +270,26 @@ Manual, organizada por intención de consulta & 1 & \textcite{nguyenht2024} \\
 Declarada sin tamaño ni criterio de corte & 4 & \textcite{calfoforo2024}; \textcite{joldea2025}; \textcite{van2025}; \textcite{vurukonda2026} \\
 No declarada o no aplicable & 4 & \textcite{ekene2025}; \textcite{khan2025}; \textcite{quincoso2026}; \textcite{rachmat2024} \\
 \bottomrule
-\end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. \textcite{quincoso2026} representan la norma como esquema relacional y reglas lógicas, sin fragmentos de texto.}
-\end{table}
+\end{longtable}}
+\vspace{-1.2em}
+{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. \textcite{quincoso2026} representan la norma como esquema relacional y reglas lógicas, sin fragmentos de texto.\par}
+\vspace{1em}
 
 Solo dos estudios someten la segmentación a prueba experimental. \textcite{khasanova2025} la tratan como uno de los tres factores de un diseño con 23 configuraciones y dos conjuntos de evaluación, y la división semántica gana a la recursiva en las mejores configuraciones. \textcite{wojtasik2025} convierten el tamaño del fragmento en pregunta de investigación sobre 2\,350 documentos normativos y evalúan además dos formas de resumir el fragmento largo.
 
 Sus resultados son el hallazgo más consecuente de esta revisión para la segmentación normativa. El fragmento de 512 unidades supera al de 4\,000 en recuperación y en generación, aunque la colección de fragmentos largos sea más pequeña y en principio más fácil de buscar. En recuperación, el mejor proceso alcanza una ganancia acumulada descontada normalizada en los primeros diez resultados (nDCG@10) de 82.03 con 512 unidades y de 76.39 con 4\,000; en generación, la puntuación total cae de 87.32 a 84.34, y la caída se explica por la calidad de la cita. Resumir el fragmento largo empeora todo. La puntuación baja a 66.27 con resumen abstractivo y a 70.42 con extractivo, porque la paráfrasis pierde información que la norma necesita conservar.
 
-\textcite{nguyenl2025} fragmentan semánticamente y reescriben cada fragmento con el contexto general del documento del que proviene, la idea más cercana a una representación jerárquica en toda la muestra. Con ella, un modelo abierto de 7 mil millones de parámetros alcanza 0.628 de exactitud contra 0.544 de GPT-4o, 0.502 de Claude 3.5 Sonnet y 0.440 de Gemini 1.5 Pro. Los tres modelos comerciales se evaluaron en sus plataformas oficiales con acceso a internet.
+\textcite{nguyenl2025} reescriben cada fragmento con el contexto general del documento del que proviene, la idea más cercana a una representación jerárquica en toda la muestra. Con ella, un modelo abierto de 7 mil millones de parámetros alcanza 0.628 de exactitud contra 0.544 de GPT-4o, 0.502 de Claude 3.5 Sonnet y 0.440 de Gemini 1.5 Pro, evaluados estos en sus plataformas oficiales con acceso a internet.
 
-\textcite{vurukonda2026} nombran y miden la colisión de contexto: dependencias de una misma universidad que usan vocabulario idéntico para reglas distintas, como una calificación aprobatoria de 40~\% en una escuela y de 50~\% en otra. Contra una línea base de índice único construida a propósito, separar el índice por dependencia redujo la alucinación de 14~\% a 3~\%. La pertinencia contextual subió de 61~\% a 89~\%.
+\textcite{vurukonda2026} nombran y miden la colisión de contexto, que ocurre cuando dependencias de una misma universidad usan vocabulario idéntico para reglas distintas, como una calificación aprobatoria de 40~\% en una escuela y de 50~\% en otra. Separar el índice por dependencia redujo la alucinación de 14~\% a 3~\% y elevó la pertinencia contextual de 61~\% a 89~\%.
 
 \subsubsection{Configuración de la Recuperación}
-El modelo de representación más usado es \texttt{all-MiniLM-L6-v2}, presente en siete estudios, y cinco estudios no identifican el que emplean. El valor de \emph{k} se declara en 10 de los 24 estudios, con valores de 3 a 20, y subirlo de 5 a 10 eleva la exhaustividad de 0.80 a 0.95 a costa de bajar la precisión de 0.92 a 0.85 \parencite{nguyenthidieu2024}.
+El modelo de representación más usado es \texttt{all-MiniLM-L6-v2}, presente en siete estudios, y cinco estudios no identifican el que emplean. El valor de \emph{k} se declara en 10 de los 24 estudios, con valores de 3 a 20, y subirlo de 5 a 10 eleva la exhaustividad de 0.80 a 0.95 a costa de bajar la precisión de 0.92 a 0.85 \parencite{nguyenthidieu2024}. Con fragmentos de 4\,000 unidades, BM25, una técnica de coincidencia léxica de los años setenta, superó a todos los recuperadores densos \parencite{wojtasik2025}. El documento normativo largo abunda en terminología específica, que es el régimen donde la coincidencia exacta aventaja a la similitud semántica.
 
-Con fragmentos de 4\,000 unidades, BM25, una técnica de coincidencia léxica de los años setenta, superó a todos los recuperadores densos \parencite{wojtasik2025}. El documento normativo largo abunda en terminología específica y poco frecuente, que es justo el régimen donde la coincidencia exacta aventaja a la similitud semántica.
-
-El reordenamiento aparece en 6 de los 24 estudios, aunque donde se aísla su efecto es grande: el mismo recuperador pasa de 59.31 a 82.03 de nDCG@10 al añadirlo, sin cambio en la exhaustividad \parencite{wojtasik2025}. Los documentos correctos ya estaban en el conjunto recuperado; solo faltaba ordenarlos.
-
-Cuatro estudios combinan un canal léxico con uno denso, y los cuatro superan la mediana de calidad. \textcite{zhong2025} comparan con la misma métrica la recuperación plana contra cuatro representaciones en grafo, y la pertinencia del contexto sube de 0.21 a entre 0.49 y 0.65. \textcite{stepanov2026} reservan el grafo para las consultas de varios pasos, con los resultados que se detallan en PI2.
+El reordenamiento aparece en 6 de los 24 estudios, aunque donde se aísla su efecto es grande: el mismo recuperador pasa de 59.31 a 82.03 de nDCG@10 al añadirlo, sin cambio en la exhaustividad \parencite{wojtasik2025}. Los documentos correctos ya estaban en el conjunto recuperado; solo faltaba ordenarlos. Cuatro estudios combinan un canal léxico con uno denso, y dos añaden una representación en grafo con la que la pertinencia del contexto sube de 0.21 a entre 0.49 y 0.65 \parencite{zhong2025} y la exactitud con atribución en consultas de varios pasos de 0.55 a 0.91 \parencite{stepanov2026}. Los cuatro híbridos superan la mediana de calidad.
 
 \subsubsection{Modelo Generador y Despliegue}
-Llama es la familia generadora más frecuente, con doce estudios, seguida por los modelos de OpenAI con siete; aparecen además Mistral, Gemini, Command-R-Plus, Qwen destilado, GLM-4, Bielik, OpenChat y LLaVA.
-
-Doce estudios despliegan el generador en infraestructura propia, siete lo consumen como servicio externo, uno compara ambas modalidades y cuatro no lo declaran. Las razones del despliegue local casi siempre son la soberanía de los datos y el costo operativo, y \textcite{jayakody2026} añaden un argumento práctico poco citado: los modelos con filtros de seguridad estrictos rechazan consultas burocráticas inocuas, como preguntar el procedimiento para apelar una suspensión. La evidencia sobre calidad es contraintuitiva y consistente. Un modelo abierto bien optimizado alcanza 0.7377 de promedio, por encima del 0.7351 del modelo comercial de referencia \parencite{khasanova2025}, y \textcite{nguyenl2025} y \textcite{jayakody2026} llegan a conclusiones del mismo signo con márgenes mayores.
+Llama es la familia generadora más frecuente, con doce estudios, seguida por los modelos de OpenAI con siete, y aparecen además Mistral, Gemini, Command-R-Plus, Qwen destilado, GLM-4, Bielik, OpenChat y LLaVA. Doce estudios despliegan el generador en infraestructura propia, sobre todo por soberanía de los datos y costo operativo. \textcite{jayakody2026} añaden un argumento práctico: los modelos con filtros de seguridad estrictos rechazan consultas burocráticas inocuas, como preguntar el procedimiento para apelar una suspensión. La evidencia sobre calidad es contraintuitiva y consistente, porque un modelo abierto bien optimizado alcanza 0.7377 de promedio frente al 0.7351 del modelo comercial de referencia \parencite{khasanova2025}. \textcite{nguyenl2025} llegan a una conclusión del mismo signo con un margen mayor. La lectura que hacen \textcite{jayakody2026} de su resultado como refutación de las leyes de escala va demasiado lejos, porque enfrentan un modelo anclado contra modelos sin anclaje y aíslan el efecto de la recuperación, no el del tamaño.
 
 \subsection{PI2. Evaluación de la Fidelidad}
 \subsubsection{Qué se Mide}
@@ -289,7 +311,7 @@ Tasa de alucinación & 4 & La medida más directa del problema \\
 Calidad de la cita & 2 & Casi inexistente \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. Un estudio puede emplear varias familias, por lo que las frecuencias no suman 24.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. Un estudio puede emplear varias familias, por lo que las frecuencias no suman 24.\par}
 \end{table}
 
 La familia más usada es la de métricas de clasificación, importada de tareas de aprendizaje supervisado. Las métricas diseñadas para recuperación y generación aparecen en cinco estudios, y las que miden lo que más importa en el dominio normativo, la tasa de alucinación y la calidad de la cita, en cuatro y en dos.
@@ -310,9 +332,9 @@ Dos estudios miden la fidelidad comparando la respuesta con el texto fuente. \te
 
 \textcite{shaikh2025} miden la alucinación con el mismo modelo como línea base: 31.7~\% de 160 consultas sin recuperación y 6.6~\% con ella. Dos anotadores independientes alcanzaron un kappa de Cohen de 0.84.
 
-\textcite{ekene2025} presentan la única evaluación humana controlada de la muestra, con cinco evaluadores, asignación aleatoria de respuestas y protocolo ciego. La consistencia entre evaluadores alcanzó un alfa de Cronbach de 0.82.
+\textcite{ekene2025} presentan la única evaluación humana controlada de la muestra, con cinco evaluadores, protocolo ciego y un alfa de Cronbach de 0.82.
 
-\textcite{tamascelli2025} repiten su evaluación en tres corridas y reportan la dispersión. También declaran qué parte de sus pruebas es cualitativa y no produce métricas.
+\textcite{tamascelli2025} repiten su evaluación en tres corridas, reportan la dispersión y declaran qué parte de sus pruebas no produce métricas.
 
 \subsection{PI3. Evidencia Sobre la Reducción del Tiempo de Consulta}
 Ocho de los 24 estudios reportan mediciones de tiempo. Ninguno compara el tiempo de consulta del sistema contra el mecanismo tradicional.
@@ -344,14 +366,14 @@ Se declara el valor de \emph{k} & 10 & 0 & 14 \\
 Se publican datos, código o conjunto de evaluación & 4 & 3 & 17 \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. En el valor de \emph{k} se cuenta como declarado solo el valor explícito; un estudio que no usa fragmentos de texto se cuenta en la columna No.}
+\par\vspace{0.4ex}{\footnotesize\noindent\textit{Nota.} \emph{n} = 24. En el valor de \emph{k} se cuenta como declarado solo el valor explícito; un estudio que no usa fragmentos de texto se cuenta en la columna No.\par}
 \end{table}
 
-La trazabilidad está lejos de ser la norma: la respuesta cita su fuente en 9 estudios y permite verificarla en 8, aunque citar es justo la ventaja que distingue a estos sistemas de un modelo sin anclaje. Quienes la resuelven combinan recursos distintos, como nombrar el artículo de origen \parencite{dayata2024}, advertir la incertidumbre cuando la información viene de la web \parencite{tamascelli2025} o imponer revisión humana de todo lo generado \parencite{ekene2025}.
+La trazabilidad está lejos de ser la norma: la respuesta cita su fuente en 9 estudios y permite verificarla en 8, aunque citar es justo la ventaja que distingue a estos sistemas de un modelo sin anclaje. En el dominio normativo, una respuesta sobre un plazo de apelación sin referencia al artículo que lo fija no sirve para tomar una decisión.
 
-La vigencia de la norma es un vacío propio del dominio. Un reglamento se reforma, un lineamiento se deroga, una convocatoria expira. \textcite{stepanov2026} son los únicos que la gestionan por diseño, con intervalos de validez por fragmento y una regla explícita de precedencia: cuando un hecho derivado de un documento contradice el dato estructurado, prevalece la fuente relacional salvo que el documento esté marcado como fuente oficial más reciente. Los otros 23 estudios tratan el corpus como si fuera estático.
+\textcite{stepanov2026} son los únicos que gestionan la vigencia de la norma por diseño, con intervalos de validez por fragmento y una regla de precedencia entre el dato estructurado y el derivado de documentos. Los otros 23 estudios tratan el corpus como si fuera estático, aunque un reglamento se reforme y una convocatoria expire.
 
-Diecisiete de 24 estudios no publican datos, código ni conjunto de evaluación. Los cuatro que sí lo hacen son \textcite{dayata2024}, \textcite{joldea2025}, \textcite{quincoso2026} y \textcite{wojtasik2025}; \textcite{stepanov2026} son el único caso con una razón declarada para no publicar, la confidencialidad de los datos reales de admisión. Con 71~\% de no disponibilidad, los valores numéricos de esta revisión se leen como declaraciones de los autores.
+Diecisiete de 24 estudios no publican datos, código ni conjunto de evaluación, y solo cuatro lo hacen \parencite{dayata2024,joldea2025,quincoso2026,wojtasik2025}. Con 71~\% de no disponibilidad, los valores numéricos de esta revisión se leen como declaraciones de los autores.
 
 Siete estudios no declaran el tamaño de su conjunto de prueba. La lectura del texto completo detectó además dos inconsistencias internas, de 46 contra 56 preguntas en un caso y de 680 contra 420 consultas en otro.
 
@@ -363,7 +385,7 @@ Tres afirmaciones cuentan con evidencia convergente de varios estudios con dise�
 
 El anclaje documental reduce la invención de datos. La tasa de alucinación baja de 31.7~\% a 6.6~\% con el mismo modelo \parencite{shaikh2025}, de 14~\% a 3~\% al particionar el índice \parencite{vurukonda2026} y de 0.15 a 0.00 en un conjunto reducido \parencite{ekene2025}. Un modelo sin anclaje propone asignaturas inelegibles o inexistentes con exactitud cercana a cero, mientras el mismo modelo con validación simbólica alcanza entre 0.81 y 0.83 \parencite{quincoso2026}.
 
-La precisión de la recuperación pesa más que el tamaño del modelo generador. Tres estudios con diseños distintos llegan a esa conclusión, y \textcite{jayakody2026} la refuerzan con un análisis de error: de las fallas restantes de su sistema, 36~\% son de recuperación y 50~\% de síntesis con el contexto correcto ya entregado. Su lectura del resultado como refutación de las leyes de escala va demasiado lejos, porque enfrenta un modelo anclado contra modelos sin anclaje y aísla el efecto de la recuperación, no el del tamaño. Para una institución con presupuesto limitado, el gasto rinde más en la preparación del corpus y en la recuperación que en el modelo.
+La precisión de la recuperación pesa más que el tamaño del modelo generador. Tres estudios con diseños distintos llegan a esa conclusión, y \textcite{jayakody2026} la refuerzan con un análisis de error: de las fallas restantes de su sistema, 36~\% son de recuperación y 50~\% de síntesis con el contexto correcto ya entregado. Para una institución con presupuesto limitado, el gasto rinde más en la preparación del corpus y en la recuperación que en el modelo.
 
 La estructura del documento fuente domina el resultado. \textcite{ramli2025} lo formulan a partir de su experiencia de implementación: las páginas largas y mal segmentadas y las tablas densas degradan la recuperación, y los documentos limpios con una fragmentación sensata mejoran el anclaje de inmediato. \textcite{wojtasik2025} lo confirman con el tamaño del fragmento, \textcite{zhong2025} con la representación estructurada y \textcite{vurukonda2026} con la partición del índice.
 
@@ -412,22 +434,15 @@ Lo que falta establecer es más interesante para quien vaya a implementar. No ha
 
 Las dos líneas con mayor retorno metodológico pendiente, la segmentación del documento normativo en español y la medición del tiempo de acceso con diseño de dos brazos, constituyen los objetivos centrales de la fase empírica de esta tesis.
 
-\section{Declaraciones}
-\textbf{Financiamiento.} Esta revisión se realizó en el marco de los estudios de maestría del primer autor en la Universidad Autónoma de Guerrero, sin financiamiento externo.
+\section*{Referencias}
+\printbibliography[heading=none,notkeyword=excluidocalidad,notkeyword=excluidotexto]
 
-\textbf{Conflicto de intereses.} Los autores declaran no tener conflictos de intereses.
-
-\textbf{Disponibilidad de datos.} El protocolo congelado con su bitácora de desviaciones, las cadenas de búsqueda con sus registros de ejecución, el registro del cribado y de la evaluación a texto completo, la matriz de extracción, el formulario de calidad con la justificación de cada puntuación y la tabla de estudios excluidos por el umbral están disponibles en \url{https://github.com/DavidMariano300/rsl-rag-normativa-universitaria}.
-
-\textbf{Contribución de los autores.} Edgar David Mariano Ruiz: conceptualización, diseño del protocolo, búsqueda, cribado, extracción, evaluación de calidad, análisis y redacción del borrador. Arnulfo Catalán Villegas: supervisión, validación del conjunto seleccionado y del procedimiento de extracción, revisión crítica. Mercedes Hernández De La Cruz: supervisión metodológica y revisión crítica.
-
-\newpage
-\printbibliography[title={Referencias},notkeyword=excluidocalidad,notkeyword=excluidotexto]
-\newpage
-\appendix
-\section{Referencias de Estudios Excluidos por Calidad}
+\section*{Apéndice A}
+{\centering\textbf{Referencias de Estudios Excluidos por Calidad}\par}
 \printbibliography[heading=none,keyword=excluidocalidad]
-\newpage
-\section{Referencias de Estudios Excluidos en Texto Completo}
+
+\section*{Apéndice B}
+{\centering\textbf{Referencias de Estudios Excluidos en Texto Completo}\par}
 \printbibliography[heading=none,keyword=excluidotexto]
+
 \end{document}
