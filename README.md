@@ -12,6 +12,10 @@ texto completo, 28 a extracción y 24 superaron el umbral de calidad de 4.0 sobr
 Con estos archivos un tercero puede repetir la búsqueda y revisar cada decisión de cribado,
 de elegibilidad, de calidad y de extracción.
 
+![Diagrama de flujo PRISMA 2020 de la revisión](08_manuscrito/diagrama_PRISMA.png)
+
+**Tecnologías:** Python 3.10+ (solo biblioteca estándar), APIs de OpenAlex, Crossref, ERIC y DBLP, LaTeX con biblatex-apa.
+
 ## Contenido
 
 | Carpeta | Qué contiene |
