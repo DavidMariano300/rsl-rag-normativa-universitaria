@@ -1,87 +1,71 @@
-# Sistemas conversacionales anclados en recuperación para el acceso a información normativa universitaria: revisión sistemática
+# Retrieval-Grounded Conversational Systems for Access to University Regulatory Information: A Systematic Review
 
-**Autores:** Edgar David Mariano Ruiz, Arnulfo Catalán Villegas y Mercedes Hernández De La Cruz
-Facultad de Ingeniería, Universidad Autónoma de Guerrero. Maestría en Ingeniería para la Innovación y el Desarrollo Tecnológico.
+**Original title:** *Sistemas conversacionales anclados en recuperación para el acceso a información normativa universitaria: revisión sistemática*
 
-Este repositorio contiene los materiales de auditoría y reproducción de una revisión sistemática
-(PRISMA 2020) sobre sistemas de generación anclada en recuperación (RAG) aplicados al acceso a
-información normativa, administrativa y procedimental en instituciones de educación superior.
-De 2 179 registros identificados en OpenAlex, Crossref, ERIC y DBLP, 90 pasaron a cribado, 30 a
-texto completo, 28 a extracción y 24 superaron el umbral de calidad de 4.0 sobre 7.0.
+**Authors:** Edgar David Mariano Ruiz, Arnulfo Catalán Villegas and Mercedes Hernández De La Cruz
+Facultad de Ingeniería, Universidad Autónoma de Guerrero. Master's program in Engineering for Innovation and Technological Development.
 
-Con estos archivos un tercero puede repetir la búsqueda y revisar cada decisión de cribado,
-de elegibilidad, de calidad y de extracción.
+This repository holds the audit and reproduction materials of a systematic review (PRISMA 2020) of retrieval-augmented generation (RAG) systems applied to access to regulatory, administrative and procedural information in higher education institutions. Of 2,179 records identified in OpenAlex, Crossref, ERIC and DBLP, 90 moved on to screening, 30 to full-text assessment and 28 to extraction, and 24 passed the quality threshold of 4.0 out of 7.0.
 
-![Diagrama de flujo PRISMA 2020 de la revisión](08_manuscrito/diagrama_PRISMA.png)
+With these files, a third party can repeat the search and review every screening, eligibility, quality and extraction decision. The review materials and the manuscript are in Spanish.
 
-**Tecnologías:** Python 3.10+ (solo biblioteca estándar), APIs de OpenAlex, Crossref, ERIC y DBLP, LaTeX con biblatex-apa.
+![PRISMA 2020 flow diagram of the review](08_manuscrito/diagrama_PRISMA.png)
 
-## Contenido
+**Technologies:** Python 3.10+ (standard library only), OpenAlex, Crossref, ERIC and DBLP APIs, LaTeX with biblatex-apa.
 
-| Carpeta | Qué contiene |
+## Contents
+
+| Folder | What it contains |
 |---|---|
-| `01_protocolo/` | Protocolo congelado con su bitácora de desviaciones (apartado 12), lista de verificación PRISMA 2020 e informe de la búsqueda |
-| `02_busqueda/` | Cadenas por base, guía de ejecución manual, registro de la búsqueda ampliada con conteos por consulta, registros recuperados y bitácoras |
-| `03_cribado/` | Registro del cribado por título y resumen con decisión, criterio y motivo de cada uno de los 90 registros; conteos del diagrama PRISMA; análisis de cobertura por captura y recaptura |
-| `04_texto_completo/` | Decisión y motivo de cada uno de los 30 estudios evaluados a texto completo |
-| `05_calidad/` | Puntuación QA1 a QA7 de cada estudio, justificación por criterio con la regla aplicada y la evidencia extraída, y estudios por debajo del umbral |
-| `06_extraccion/` | Matriz de extracción (28 estudios por 34 campos), fichas completas en JSON y estudios excluidos a texto completo |
-| `07_sintesis/` | Catálogo de los estudios incluidos |
-| `08_manuscrito/` | Manuscrito en LaTeX, referencias en BibTeX, diagrama PRISMA y PDF compilado |
-| `scripts/` | Programas de búsqueda, verificación, consolidación, cribado y extracción |
+| `01_protocolo/` | Frozen protocol with its deviation log (section 12), PRISMA 2020 checklist and search report |
+| `02_busqueda/` | Search strings per database, manual execution guide, log of the expanded search with counts per query, retrieved records and logs |
+| `03_cribado/` | Title and abstract screening log with the decision, criterion and reason for each of the 90 records; PRISMA diagram counts; capture-recapture coverage analysis |
+| `04_texto_completo/` | Decision and reason for each of the 30 studies assessed at full text |
+| `05_calidad/` | QA1 to QA7 score for each study, justification per criterion with the rule applied and the evidence extracted, and studies below the threshold |
+| `06_extraccion/` | Extraction matrix (28 studies by 34 fields), complete JSON records and studies excluded at full text |
+| `07_sintesis/` | Catalog of the included studies |
+| `08_manuscrito/` | LaTeX manuscript, BibTeX references, PRISMA diagram and compiled PDF |
+| `scripts/` | Search, verification, consolidation, screening and extraction programs |
 
-Los criterios de elegibilidad (I1 a I8 y E1 a E8) están en el apartado 4 del protocolo y en la
-Tabla 1 del manuscrito. El instrumento de calidad está en el apartado 6 del protocolo; el
-formulario de extracción, en el apartado 7.
+The eligibility criteria (I1 to I8 and E1 to E8) are in section 4 of the protocol and in Table 1 of the manuscript. The quality instrument is in section 6 of the protocol, and the extraction form is in section 7.
 
-## Qué no se incluye
+## What is not included
 
-- **Textos completos de los estudios.** Son obras de terceros protegidas por derechos de autor.
-  Cada estudio se identifica por su DOI.
-- **Resúmenes (abstracts) de los registros.** Se eliminaron de todos los archivos por la misma
-  razón. Se recuperan con el DOI desde Crossref u OpenAlex.
+- **Full texts of the studies.** They are third-party works protected by copyright. Each study is identified by its DOI.
+- **Record abstracts.** They were removed from all files for the same reason. They can be retrieved by DOI from Crossref or OpenAlex.
 
-Los archivos no contienen datos personales de participantes de los estudios primarios ni
-credenciales de acceso.
+The files contain no personal data of participants in the primary studies and no access credentials.
 
-## Cómo reproducir la búsqueda
+## Reproducing the search
 
-Los programas usan solo la biblioteca estándar de Python 3.10 o posterior.
+The programs use only the standard library of Python 3.10 or later.
 
 ```bash
-# Crossref y OpenAlex piden un correo de contacto para el acceso cortés
-export CORREO_CONTACTO="su_correo@ejemplo.org"
+# Crossref and OpenAlex ask for a contact email for polite access
+export CORREO_CONTACTO="your_email@example.org"
 
-python scripts/busqueda_ampliada.py      # OpenAlex (6 variantes) y Crossref (3 consultas)
-python scripts/buscar_eric_dblp.py       # ERIC y DBLP
-python scripts/rastreo_de_citas.py       # rastreo de citas sobre los incluidos
+python scripts/busqueda_ampliada.py      # OpenAlex (6 variants) and Crossref (3 queries)
+python scripts/buscar_eric_dblp.py       # ERIC and DBLP
+python scripts/rastreo_de_citas.py       # citation tracking over the included studies
 python scripts/consolidar_para_cribado.py
 ```
 
-Los programas escriben en la estructura de trabajo original (`01_busqueda/automatizada/` y
-`02_cribado/`); los resultados de la ejecución del 4 de septiembre de 2026 están archivados
-en las carpetas numeradas de este repositorio. Los conteos de una nueva ejecución pueden
-variar, porque OpenAlex y Crossref se actualizan de forma continua.
+The programs write to the original working structure (`01_busqueda/automatizada/` and `02_cribado/`); the results of the September 4, 2026 run are archived in the numbered folders of this repository. Counts from a new run may vary, because OpenAlex and Crossref are updated continuously.
 
-Las cinco bases de suscripción previstas en el protocolo (Scopus, Web of Science, IEEE Xplore,
-ACM Digital Library y SpringerLink) no admiten consulta automatizada sin credenciales. Sus
-cadenas, con la sintaxis de cada plataforma, están en `02_busqueda/cadenas_por_base.md`.
+The five subscription databases planned in the protocol (Scopus, Web of Science, IEEE Xplore, ACM Digital Library and SpringerLink) don't allow automated queries without credentials. Their search strings, with each platform's syntax, are in `02_busqueda/cadenas_por_base.md`.
 
-## Actualización pendiente
+## Pending update
 
-El análisis de captura y recaptura (`03_cribado/analisis_cobertura_captura_recaptura.csv`)
-contrastó la búsqueda contra el conjunto de una exploración previa y estimó una recuperación
-de 62 %. Los 14 estudios elegibles no recuperados están listados en ese archivo y se cribarán
-en la actualización de la revisión.
+The capture-recapture analysis (`03_cribado/analisis_cobertura_captura_recaptura.csv`) compared the search against the set from a previous exploration and estimated a recall of 62%. The 14 eligible studies that weren't retrieved are listed in that file and will be screened in the review update.
 
-## Licencia
+## License
 
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es). Ver `LICENSE`.
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See `LICENSE`.
 
-## Cómo citar
+## How to cite
 
-Mariano Ruiz, E. D., Catalán Villegas, A., y Hernández De La Cruz, M. (2026). *Sistemas
+Mariano Ruiz, E. D., Catalán Villegas, A., & Hernández De La Cruz, M. (2026). *Sistemas
 conversacionales anclados en recuperación para el acceso a información normativa y
 procedimental en instituciones de educación superior: Una revisión sistemática. Materiales de
-auditoría y reproducción* (Versión 4.0) [Conjunto de datos]. GitHub.
+auditoría y reproducción* (Version 4.0) [Data set]. GitHub.
 https://github.com/DavidMariano300/rsl-rag-normativa-universitaria
